@@ -1,6 +1,6 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Trip
-
 
 
 # trips = [
@@ -8,6 +8,12 @@ from .models import Trip
 #   Trip('Punta Cana', 'Dominican Republic', '10/27/2018', '11/11/2018'),
 #   Trip('Prague', 'Czechia', '5/19/2018', '6/1/2018')
 # ]
+
+class TripCreate(CreateView):
+  model = Trip
+  # fields = ['city', 'country']
+  fields = ['city', 'country', 'arrived', 'departed']
+  success_url = '/trips/'
 
 # Define the home view
 def home(request):
