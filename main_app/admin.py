@@ -1,8 +1,5 @@
 from django.contrib import admin
-
-from django.contrib import admin
-# import your models here
-from .models import Trip
+from .models import Item
 
 # Register your models here
-admin.site.register(Trip)
+admin.site.register(Item)
